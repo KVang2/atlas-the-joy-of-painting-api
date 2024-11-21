@@ -1,7 +1,0 @@
-+------------------+     +------------------+     +------------------------+
-|    Episodes      |     |     Subjects     |     |    EpisodeSubjects      |
-+------------------+     +------------------+     +------------------------+
-| id (PK)          |     | id (PK)          |     | episode_id (FK)         |
-| episode_code     |     | name             |     | subject_id (FK)         |
-| title            |     +------------------+     | PRIMARY KEY (ep_id, sb_id)
-+------------------+

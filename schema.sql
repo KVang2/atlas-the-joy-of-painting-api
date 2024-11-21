@@ -1,4 +1,10 @@
-// Episodes Table
+-- Creating database
+CREATE DATABASE data_bobross;
+
+-- switch to use database
+USE data_bobross;
+
+-- Episodes Table
 CREATE TABLE episode (
     id UUID PRIMARY KEY,
     title TEXT NOT NULL,
@@ -7,7 +13,7 @@ CREATE TABLE episode (
     broadcast_date DATE NOT NULL
 );
 
-// painting Table
+-- painting Table
 CREATE TABLE painting (
     id UUID PRIMARY KEY,
     painting_index INT NOT NULL,
@@ -18,7 +24,7 @@ CREATE TABLE painting (
     episode_id UUID REFERENCES episodes(id)
 );
 
-// Subject Table
+-- Subject Table
 CREATE TABLE subject (
     id UUID PRIMARY KEY,
     episode INT NOT NULL,
@@ -26,7 +32,7 @@ CREATE TABLE subject (
     obj TEXT NOT NULL
 );
 
-// Colors Table
+-- Colors Table
 CREATE TABLE colors (
     id UUID PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
