@@ -36,5 +36,5 @@ CREATE TABLE subject (
 CREATE TABLE colors (
     id UUID PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
-    hex_code TEXT NOT NULL
+    hex_code TEXT NOT NULL UNIQUE
 );
