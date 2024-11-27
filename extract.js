@@ -40,3 +40,5 @@ processFiles(filePaths).then((allFiles) => {
         console.log('Extraction:', Object.keys(allFiles));
     }
 });
+
+module.exports = { parseFile, processFiles };

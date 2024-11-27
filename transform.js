@@ -37,7 +37,7 @@ function transformData(row, sourceFile) {
 }
 
 // Function to process a file
-function processFile(filePath) {
+function processTransformedFile(filePath) {
     return new Promise((resolve, reject) => {
         // Array to store transformed rows
         const transformedArray = [];
@@ -66,7 +66,7 @@ async function csvProcess() {
     try {
         const transformedData = {};
         for (const filePath of filePaths) {
-            const transformedArray = await processFile(filePath);
+            const transformedArray = await processTransformedFile(filePath);
             transformedData[filePath] = transformedArray;
         }
         return transformedData;
@@ -76,4 +76,4 @@ async function csvProcess() {
 }
 
 // Export function for use in other modules
-module.exports = { csvProcess, processFile, transformData };
+module.exports = { csvProcess, processTransformedFile, transformData };
