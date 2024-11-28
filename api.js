@@ -6,7 +6,8 @@ app.use(express.json());
 
 const PORT = 3000;
 
-// Import routes
+// Route to filter
+app.get('ep')
 
 
 // Start server

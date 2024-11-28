@@ -1,0 +1,20 @@
+{
+  "name": "atlas-the-joy-of-painting-api",
+  "version": "1.0.0",
+  "description": "# Task 0: Design a Database - create a design document using UML documentation for the database - Create SQL scripts to create database from scratch based on design document",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KVang2/atlas-the-joy-of-painting-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KVang2/atlas-the-joy-of-painting-api/issues"
+  },
+  "homepage": "https://github.com/KVang2/atlas-the-joy-of-painting-api#readme"
+}
