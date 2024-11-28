@@ -1,11 +1,6 @@
 const mysql = require('mysql2/promise')
+const dbConfig = require('./db');
 
-const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'data_bobross',
-};
 
 async function loadData(tableName, data) {
     const connection = await mysql.createConnection(dbConfig);

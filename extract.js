@@ -9,14 +9,8 @@ function parseFile(filePath) {
     fs.createReadStream(filePath)
         .pipe(csv({ separator: ',' }))
         .on('data', (row) => results.push(row))
-        .on('end', () => {
-            console.log(`${filePath};`, results);
-            resolve({ filePath, results });
-        })
-        .on('error', (err) => {
-            console.error(`Error ${filePath}:`, err);
-            reject(err);
-        });
+        .on('end', () => resolve({ filePath, results }))
+        .on('error', (err) => reject(err));
     });
 }
 

@@ -6,30 +6,30 @@ const { v4: uuidv4 } = require('uuid'); // Library to generate UUIDs
 const filePaths = ['Episode.csv', 'Colors.csv', 'Subject.csv'];
 
 function transformData(row, sourceFile) {
-    const transformedData= {};
+    let transformedData= {};
 
     if (sourceFile === 'Episode.csv') {
         // Transformation for 'Episode.csv'
         transformedData = {
             id: uuidv4(),
-            title: row.title.trim(),
-            episode: parseInt(row.episode, 10),
-            season: parseInt(row.season, 10),
+            title: row.title.trim() || 'Unknown Title', // Default if title is missing
+            episode: parseInt(row.episode, 10) || 0, // Default to 0 if invalid
+            season: parseInt(row.season, 10) || 0, // Default if invalid
             broadcast_date: new Date(row.broadcast_date).toISOString(),
         };
     } else if (sourceFile === 'Colors.csv') {
         // Transformation for 'Colors.csv'
         transformedData = {
             id: uuidv4(),
-            name: row.name.trim(),
-            hex_code: row.hex_code.trim(),
+            name: row.name.trim() || 'Unknown Color',
+            hex_code: row.hex_code.trim() || '#000000', // default
         };
     } else if (sourceFile === 'Subject.csv') {
         transformedData = {
             // Trasformation for 'Subject.csv'
             id: uuidv4(),
-            episode_id: row.episode_id.trim(),
-            obj: row.obj.trim(),
+            episode_id: row.episode_id.trim() || 'Unknown Episode',
+            obj: row.obj.trim() || 'Unknown Object', // Default value
         };
     }
 

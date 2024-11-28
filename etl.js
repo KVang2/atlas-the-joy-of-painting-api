@@ -20,7 +20,7 @@ const { loadData } = require('./load');
             // Transform data
             const fileData = extractedData[filePath];
             const transformedData = fileData.map((row) =>
-                require('./transform').transformData(row, filePath)
+               transformData(row, filePath)
             );
 
             // Loading data into database
